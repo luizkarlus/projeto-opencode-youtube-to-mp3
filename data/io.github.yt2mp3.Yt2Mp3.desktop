@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=YouTube to MP3
+GenericName=Conversor de áudio
+Comment=Baixa e converte áudio de links de vídeo
+Exec=yt2mp3 %U
+Terminal=false
+Categories=AudioVideo;Audio;
+Keywords=youtube;mp3;audio;converter;download;yt2mp3;
+StartupNotify=true
+StartupWMClass=io.github.yt2mp3.Yt2Mp3
+Icon=io.github.yt2mp3.Yt2Mp3
+MimeType=x-scheme-handler/yt2mp3;

@@ -1,0 +1,18 @@
+# Build
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Vendorizado (baixado por build-deb.sh)
+vendor/
+
+# Pacotes gerados
+*.deb
+
+# Editores
+.vscode/
+.idea/

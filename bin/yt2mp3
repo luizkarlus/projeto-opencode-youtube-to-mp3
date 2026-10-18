@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+"""Launcher do yt2mp3.
+
+Funciona tanto no checkout de desenvolvimento (bin/yt2mp3) quanto instalado
+pelo pacote .deb (/usr/bin/yt2mp3).
+"""
+
+import os
+import sys
+
+
+def _bootstrap_path() -> None:
+    here = os.path.dirname(os.path.realpath(__file__))
+    candidates = (
+        os.path.dirname(here),                    # checkout: <projeto>/bin/yt2mp3
+        os.path.join(os.path.dirname(here), "lib", "yt2mp3"),  # raiz preparada
+        "/usr/lib/yt2mp3",                        # instalação no sistema
+    )
+    for base in candidates:
+        if os.path.isdir(os.path.join(base, "yt2mp3")):
+            if base not in sys.path:
+                sys.path.insert(0, base)
+            return
+
+
+_bootstrap_path()
+
+from yt2mp3.application import main  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(main())
