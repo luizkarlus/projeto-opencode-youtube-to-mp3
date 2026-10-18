@@ -11,7 +11,7 @@ __pycache__/
 vendor/
 
 # Pacotes gerados
-*.deb
+# *.deb
 
 # Editores
 .vscode/
